@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="close" aria-label="Close" ng-click="$dismiss()"><span
+            aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="modal-title">Add Repositories To Xray</h3>
+</div>
+<div class="modal-body clearfix">
+    <jf-drag-drop include-list="indexedRepos"
+                  exclude-list="availableRepos"
+                  include-display-field="name"
+                  exclude-display-field="name"
+                  objects-name="Repositories"
+                  headers="{leftTitle:'Available Repositories', rightTitle:'Selected Repositories'}"></jf-drag-drop>
+    </jf-drag-drop>
+</div>
+<div class="modal-footer">
+    <div class="pull-right modal-footer-buttons-container">
+        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+        <button class="btn btn-primary" ng-click="save(indexedRepos);">Save</button>
+    </div>
+</div>

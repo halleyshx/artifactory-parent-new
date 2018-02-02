@@ -1,0 +1,21 @@
+<config version="2">
+    <chain template="google-storage"/>
+    <provider id="cache-fs" type="cache-fs">
+        <maxCacheSize>17gb</maxCacheSize>         <!-- cache size in gb -->
+        <cacheProviderDir>/path/to/cache</cacheProviderDir>   <!-- full path to cache-dir -->
+    </provider>
+    <provider id="eventual" type="eventual">
+        <hazelcastWaitingTime>60</hazelcastWaitingTime>
+        <dispatcherInterval>15</dispatcherInterval>
+    </provider>
+    <provider id="google-storage" type="google-storage">
+        <bucketName>ccc</bucketName>
+        <credential>bbb</credential>
+        <endpoint>commondatastorage.googleapis.com</endpoint>
+        <testConnection>false</testConnection>
+        <providerId>google-cloud-storage</providerId>
+        <identity>aaa</identity>
+        <httpsOnly>false</httpsOnly>
+        <bucketExists>true</bucketExists>
+    </provider>
+</config>

@@ -1,0 +1,23 @@
+<config version="v1">
+    <chain template="google-storage"/>
+    <provider type="cache-fs" id="cache-fs">
+        <binariesDir>/path/to/cache</binariesDir>
+        <maxCacheSize>17gb</maxCacheSize>
+        <cacheProviderDir>/path/to/cache</cacheProviderDir>
+        <fileStoreDir>cache</fileStoreDir>
+    </provider>
+    <provider type="eventual" id="eventual">
+        <dispatcherInterval>15</dispatcherInterval>
+        <hazelcastWaitingTime>60</hazelcastWaitingTime>
+    </provider>
+    <provider type="retry" id="retry"/>
+    <provider type="google-storage" id="google-storage">
+        <bucketName>ccc</bucketName>
+        <credential>bbb</credential>
+        <testConnection>false</testConnection>
+        <providerId>google-cloud-storage</providerId>
+        <identity>aaa</identity>
+        <httpsOnly>false</httpsOnly>
+        <bucketExists>true</bucketExists>
+    </provider>
+</config>

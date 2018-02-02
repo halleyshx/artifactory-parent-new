@@ -1,0 +1,28 @@
+<div class="home-page-widget set-me-up">
+    <div class="list-title">
+        Set Me Up
+    </div>
+    <div class="list-filter">
+        <i class="icon icon-filter"></i>
+        <input type="text"
+                name="filter"
+                class="input-text"
+                ng-style="{color: ctrl.filterHasNoMatches() ? 'red' : 'inherit'}"
+                ng-model="ctrl.repoFilter"
+                placeholder="Filter by Repository Key"/>
+    </div>
+    <div class="list-content no-content" ng-if="!ctrl.repos.length">
+        <p>No repositories to display.</p>
+        <p>Please verify you are <a href ui-sref="login">logged in</a> or contact your system administrator.</p>
+    </div>
+
+    <div class="list-content" ng-if="ctrl.repos.length">
+        <div class="list-item"
+             ng-click="ctrl.showSetMeUp(repo)"
+             ng-repeat="repo in ctrl.repos | filter: {repoKey: ctrl.repoFilter}">
+            <div class="icon icon-{{repo.icon}}"></div>
+            <div class="repo">{{repo.repoKey}}
+            </div>
+        </div>
+    </div>
+</div>

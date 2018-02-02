@@ -1,0 +1,15 @@
+<div class="home-page-widget version" ng-class="{'open-menu' : ctrl.$scope.jfSidebar.pinMenuStatus}">
+    <div class="row top">
+        <div class="table-cell">
+            <span class="big-num" jf-hide-for-aol>{{ctrl.homepageData.version}}</span>
+            Artifactory Version
+        </div>
+    </div>
+    <div class="row bottom">
+        <div class="table-cell">
+            <a ng-if="ctrl.homepageData.latestRelease" target="_blank" ng-href="{{ctrl.homepageData.latestReleaseLink}}">
+                Latest release {{ctrl.homepageData.latestRelease}}
+            </a>
+        </div>
+    </div>
+</div>

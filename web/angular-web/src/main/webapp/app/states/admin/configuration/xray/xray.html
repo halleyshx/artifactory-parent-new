@@ -1,0 +1,50 @@
+<div class="content-layout-container">
+    <h1>JFrog Xray Integration</h1>
+
+
+    <div class="content-wrapper">
+        <div class="card stretch card-pole-pad card-side-pad">
+
+            <div class="alert alert-warning" ng-if="!AdminConfigurationXray.footerDao.getInfo().xrayConfigured">
+                <a href ng-click="AdminConfigurationXray._updateFooter(); AdminConfigurationXray.getData()"
+                        class="pull-right"><i class="icon-refresh"></i> Refresh</a>
+                <span ng-bind-html="AdminConfigurationXray.notConnnectedToXrayMessage"></span>
+            </div>
+
+            <div class="form-group form-checkbox">
+                <jf-checkbox text="Enable Xray Integration" ng-if="AdminConfigurationXray.footerDao.getInfo().xrayConfigured">
+                    <input type="checkbox"
+                            id="xrayIndex"
+                            ng-change="AdminConfigurationXray.xrayEnabledChange()"
+                            ng-model="AdminConfigurationXray.xrayEnabled">
+                </jf-checkbox>
+            </div>
+            <div class="pull-right admin-grid-buttons">
+                <a ng-click="AdminConfigurationXray.add()" ng-if="AdminConfigurationXray.footerDao.getInfo().xrayConfigured"
+                        ng-disabled="!AdminConfigurationXray.xrayEnabled" id="new-button">
+                    <i class="grid-button-icon icon icon-new"></i>Add
+                </a>
+            </div>
+            <jf-grid
+                    ng-if="AdminConfigurationXray.footerDao.getInfo().xrayConfigured"
+                    grid-options="AdminConfigurationXray.gridOptions"
+                    filter-field="name"
+                    object-name="repository/repositories"
+                    auto-focus="true">
+            </jf-grid>
+        </div>
+
+        <!--
+                <div class="content-footer">
+                    <div class="pull-right">
+                        <button class="btn btn-default" type="button"
+                                ng-click="AdminConfigurationXray.reset()">Reset
+                        </button>
+                        <button class="btn btn-primary" type="button"
+                                ng-click="AdminConfigurationXray.save()">Save
+                        </button>
+                    </div>
+                </div>
+        -->
+    </div>
+</div>

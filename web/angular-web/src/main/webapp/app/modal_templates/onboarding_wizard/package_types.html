@@ -1,0 +1,38 @@
+<div class="technologies">
+    <ul>
+        <li ng-repeat="type in WizCtrl.packageTypes.packageTypes"
+            ng-if="!type.ignore"
+            class="wizard-package-type"
+            ng-class="{
+                        'package-highlight': !type.disabled && WizCtrl.packageTypes.highlightCheck(WizCtrl.packageTypes.typeFilter,type),
+                        'package-selected': !type.disabled && isSelected(),
+                        'disabled': type.disabled || type.unavailable
+                      }"
+            jf-disable-feature="{{ type.value }}"
+            ng-click="!type.disabled && !type.unavailable && WizCtrl.packageTypes.selectRepoType(type)"
+            id="repository-select-package-type-{{ type.value }}">
+            <div ng-if="type.tooltip"
+                 jf-tooltip="{{ type.tooltip }}">
+                <div class="repotype iconrepo iconrepo-{{type.icon}}" ng-class="{'no-help-text' : !type.helpText}"></div>
+                <span ng-if="type.helpText">{{type.text}}</span>
+            </div>
+            <div ng-if="!type.tooltip">
+                <div class="repotype iconrepo iconrepo-{{type.icon}}" ng-class="{'no-help-text' : !type.helpText}"></div>
+                <span ng-if="type.helpText">{{type.text}}</span>
+            </div>
+        </li>
+    </ul>
+<!--
+    <a href
+       ng-click="WizCtrl.packageTypes.advancedMode = true"
+       ng-if="!WizCtrl.packageTypes.advancedMode">Advanced Mode</a>
+
+    <div ng-if="WizCtrl.packageTypes.advancedMode" class="margin-top-25">
+        ADVANCED MODE !!!
+    </div>
+
+    <a href
+       ng-click="WizCtrl.packageTypes.advancedMode = false"
+       ng-if="WizCtrl.packageTypes.advancedMode">Simple Mode</a>
+-->
+</div>

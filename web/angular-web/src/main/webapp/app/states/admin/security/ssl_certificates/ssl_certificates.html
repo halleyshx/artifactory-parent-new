@@ -1,0 +1,19 @@
+<div class="content-layout-container ssl-certificates">
+    <h1>Certificates</h1>
+
+    <div class="content-wrapper">
+        <div class="card stretch card-pole-pad card-side-pad">
+            <div class="pull-right admin-grid-buttons">
+                <a id="new-ha-license-button" ng-click="SslCertificates.launchCertificateKeyModal()">
+                    <i class="grid-button-icon icon icon-new"></i>New
+                </a>
+            </div>
+            <jf-grid grid-options="SslCertificates.gridOption"
+                    filter-field="alias"
+                    filter-field2="issued_to"
+                    auto-focus="true"
+                    object-name="Certificate"
+                    class="certificates-table"></jf-grid>
+        </div>
+    </div>
+</div>

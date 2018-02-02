@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <button type="button"
+            class="close"
+            ng-click="$dismiss()">
+            <span>x</span>
+    </button>
+    <h4 class="modal-title">{{modalTitle}}</h4>
+</div>
+<div class="modal-body clearfix no-permissions-modal">
+    <div class="form-group">
+        <div id="no-permissions-container">
+            <span ng-bind-html="modalText"></span>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</div>

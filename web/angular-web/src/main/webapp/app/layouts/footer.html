@@ -1,0 +1,11 @@
+<div class="sidebar-footer">
+    <div class="icon"><i class="icon-jfrog-logo"></i></div>
+    <div class="wrapper-footer-data">
+        {{jfSidebar.footerData.versionInfo}}<br />
+            {{jfSidebar.footerData.buildNumber}}<br ng-if="jfSidebar.footerData.buildNumber" />
+        <div ng-if="!jfSidebar.footerData.isAol">
+            {{jfSidebar.footerData.licenseInfo}}<br ng-if="jfSidebar.footerData.licenseInfo" />
+        </div>
+        <span>{{jfSidebar.footerData.copyRights}}</span>
+    </div>
+</div>

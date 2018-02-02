@@ -1,0 +1,9 @@
+<div class="icons-preload">
+    <span ng-repeat="icon in $wizardCtrl.wizardDefinitionObject.iconsPreload">
+        <img ng-src="{{icon.icon}}" ng-srcset="{{icon.iconSrcset}}" alt="">
+    </span>
+
+</div>
+
+This wizard will get your Artifactory set up in just a few short leaps.<br>You can change any settings later – so let’s begin!
+<canvas ng-init="WizCtrl.initMachine()" class="machine-canvas" id="canvas" width="1390" height="330" style="display: block; background-color:rgba(255, 255, 255, 1.00)"></canvas>

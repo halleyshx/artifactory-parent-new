@@ -1,0 +1,27 @@
+<jf-panel jf-panel-heading="Recipe Info"
+          ng-if="jfConan.conanData.recipeInfo">
+
+    <table class="jf-data-table">
+        <tr ng-repeat="(key,value) in jfConan.conanData.recipeInfo" ng-if="jfConan.DICTIONARY[key] && key != 'description'">
+            <td>{{jfConan.DICTIONARY[key]}}:</td>
+            <td>{{value}}</td>
+        </tr>
+    </table>
+</jf-panel>
+
+<jf-panel jf-panel-heading="Description"
+        ng-if="jfConan.conanData.recipeInfo.description">
+    <p>{{jfConan.conanData.recipeInfo.description}}</p>
+</jf-panel>
+
+<jf-panel jf-panel-heading="Packages Info"
+        ng-if="jfConan.conanData.recipeInfo">
+
+    <table class="jf-data-table">
+        <tr>
+            <td>Package Count:</td>
+            <td>{{jfConan.conanData.packageCount}}</td>
+        </tr>
+    </table>
+
+</jf-panel>

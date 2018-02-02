@@ -1,0 +1,28 @@
+<div class="home-page-widget most-downloaded" ng-class="{'open-menu' : ctrl.$scope.jfSidebar.pinMenuStatus}">
+    <div class="list-title">
+        <a href ng-click="ctrl.refresh()" class="refresh-button pull-right"><i class="icon icon-refresh"></i></a>
+        Most Downloaded Artifacts
+        <span>({{ctrl.dateTime | date: 'dd/MM/yy HH:mm:ss'}})</span>
+    </div>
+
+
+    <div class="list-content no-content" ng-if="!ctrl.data.mostDownloaded.length">
+        <p>No artifacts to display.</p>
+        <p>
+            <a href="https://www.jfrog.com/confluence/display/RTF/Deploying+Artifacts" target="_blank">Learn how to</a> deploy your artifacts to Artifactory.
+        </p>
+    </div>
+
+    <div class="list-content" ng-if="ctrl.data.mostDownloaded.length">
+        <div class="list-item"
+                ng-repeat="item in ctrl.data.mostDownloaded">
+            <div class="list-item-inner">
+                <a href
+                        ui-sref="artifacts.browsers.path({tab:'General',browser:'tree',artifact:item.path})"
+                        ng-click="ctrl.itemClick()">
+                    <jf-marquee><span class="count">{{item.downloads}}</span> {{item.path}}</jf-marquee>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

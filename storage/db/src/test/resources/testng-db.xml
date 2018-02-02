@@ -1,0 +1,266 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DB Tests Suite" thread-count="1" verbose="1" parallel="false">
+    <test name="ArtifactoryDbVersionTest">
+        <classes>
+            <class name="org.artifactory.storage.db.version.ArtifactoryDbVersionTest"/>
+        </classes>
+    </test>
+    <!--ArtifactoryDBVersionTest should be the first test in order to convert old databases to 3.1.x-->
+    <test name="DbV100UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V100UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV101UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V101UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV102UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V102UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV103UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V103UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV104UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V104UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV107UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V107UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV108UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V108UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV200UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V200UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV201UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V201UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="DbV202UpgradeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.upgrades.version.V202UpgradeTest"/>
+        </classes>
+    </test>
+    <test name="ArtifactoryServersDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.ha.itest.dao.ArtifactoryServersDaoTest"/>
+        </classes>
+    </test>
+    <test name="DbPropertiesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.base.itest.dao.DbPropertiesDaoTest"/>
+        </classes>
+    </test>
+    <test name="ArtifactoryServersServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.ha.itest.service.ArtifactoryServersServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="FileServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.FileServiceImplTest"/>
+        </classes>
+    </test>
+<!--
+    <test name="ConfigurableBinaryProviderManagerTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.ConfigurableBinaryProviderManagerTest"/>
+        </classes>
+    </test>
+-->
+    <test name="FileServiceRepoSummaryTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.FileServiceRepoStorageSummaryTest"/>
+        </classes>
+    </test>
+    <test name="NodesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.NodesDaoTest"/>
+        </classes>
+    </test>
+    <test name="BinariesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.dao.BinariesDaoTest"/>
+        </classes>
+    </test>
+    <test name="PropertiesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.PropertiesDaoTest"/>
+        </classes>
+    </test>
+    <test name="DbPropertiesServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.DbPropertiesServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="WatchesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.WatchesDaoTest"/>
+        </classes>
+    </test>
+    <test name="WatchesServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.WatchesServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="StatsDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.StatsDaoTest"/>
+        </classes>
+    </test>
+    <test name="StatsServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.StatsServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="ConfigsDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.ConfigsDaoTest"/>
+        </classes>
+    </test>
+    <test name="ConfigsServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.ConfigsServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="ArchiveEntriesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.ArchiveEntriesDaoTest"/>
+        </classes>
+    </test>
+    <test name="ArchiveEntriesImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.ArchiveEntriesServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="TasksDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.TasksDaoTest"/>
+        </classes>
+    </test>
+    <test name="TasksServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.TasksServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="UserGroupDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.security.itest.dao.UserGroupsDaoTest"/>
+        </classes>
+    </test>
+    <test name="AclsDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.security.itest.dao.AclsDaoTest"/>
+        </classes>
+    </test>
+    <test name="FullDeleteAclsDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.security.itest.dao.FullDeleteAclsDaoTest"/>
+        </classes>
+    </test>
+    <test name="FullDeleteUserGroupsDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.security.itest.dao.FullDeleteUserGroupsDaoTest"/>
+        </classes>
+    </test>
+    <test name="AclCacheLoaderTest">
+        <classes>
+            <class name="org.artifactory.storage.db.security.service.AclCacheLoaderTest"/>
+        </classes>
+    </test>
+    <test name="ItemTreeTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.ItemTreeTest"/>
+        </classes>
+    </test>
+    <test name="BuildsDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.build.itest.dao.BuildsDaoTest"/>
+        </classes>
+    </test>
+    <test name="BuildModulesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.build.itest.dao.BuildModulesDaoTest"/>
+        </classes>
+    </test>
+    <test name="BuildArtifactsDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.build.itest.dao.BuildArtifactsDaoTest"/>
+        </classes>
+    </test>
+    <test name="BuildDependenciesDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.build.itest.dao.BuildDependenciesDaoTest"/>
+        </classes>
+    </test>
+    <test name="DbDistributeLocksDaoTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.dao.DbDistributeLocksDaoTest"/>
+        </classes>
+    </test>
+    <test name="BuildStoreServiceImplTest">
+        <classes>
+            <class name="org.artifactory.storage.db.build.itest.service.BuildStoreServiceImplTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreImplFileProviderTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryServiceFileProviderTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreImplFullPathFileProviderTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryServiceFullPathFileProviderTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreImplFullDbProviderTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryServiceFullDbProviderTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreImplCachedFSProviderTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryServiceCachedFSProviderTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreExternalProviderPassThroughTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryStoreExternalProviderPassThroughTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreExternalProviderCopyFirstTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryStoreExternalProviderCopyFirstTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreExternalProviderCopyOnReadTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryStoreExternalProviderCopyOnReadTest"/>
+        </classes>
+    </test>
+    <test name="BinaryStoreExternalProviderMoveTest">
+        <classes>
+            <class name="org.artifactory.storage.db.binstore.itest.service.BinaryStoreExternalProviderMoveTest"/>
+        </classes>
+    </test>
+    <test name="FileServiceSpecialCharsTest">
+        <classes>
+            <class name="org.artifactory.storage.db.fs.itest.service.FileServiceSpecialCharsTest"/>
+        </classes>
+    </test>
+</suite>

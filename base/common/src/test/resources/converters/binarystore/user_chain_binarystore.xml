@@ -1,0 +1,19 @@
+<config version="2">
+    <chain>
+        <provider id="sharding" type="sharding">
+            <sub-provider id="shard1" type="state-aware"/>
+            <sub-provider id="shard2" type="state-aware"/>
+        </provider>
+    </chain>
+    <provider id="sharding" type="sharding">
+        <readBehavior>roundRobin</readBehavior>
+        <writeBehavior>roundRobin</writeBehavior>
+        <redundancy>1</redundancy>
+    </provider>
+    <provider id="shard1" type="state-aware">
+        <fileStoreDir>/filestore1</fileStoreDir>
+    </provider>
+    <provider id="shard2" type="state-aware">
+        <fileStoreDir>/filestore2</fileStoreDir>
+    </provider>
+</config>

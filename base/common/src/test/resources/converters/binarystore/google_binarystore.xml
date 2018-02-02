@@ -1,0 +1,20 @@
+<config version="2">
+    <chain template="google-storage"/>
+    <provider id="google-storage" type="google-storage">
+        <endpoint>google.storage.com</endpoint>
+        <bucketName>aBucketName</bucketName>
+        <testConnection>false</testConnection>
+        <multiPartLimit>1000</multiPartLimit>
+        <identity>ident</identity>
+        <credential>someCred</credential>
+        <path>longestPath</path>
+        <proxyIdentity>darkProxy</proxyIdentity>
+        <proxyCredential>street</proxyCredential>
+        <proxyPort>2</proxyPort>
+        <proxyHost>Box</proxyHost>
+        <port>4</port>
+        <httpsOnly>false</httpsOnly>
+        <httpsPort>3</httpsPort>
+        <bucketExists>true</bucketExists>
+    </provider>
+</config>

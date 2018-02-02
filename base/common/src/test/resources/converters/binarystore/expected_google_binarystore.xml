@@ -1,0 +1,27 @@
+<config version="v1">
+    <chain template="google-storage"/>
+    <provider type="cache-fs" id="cache-fs">
+        <binariesDir>data/cache</binariesDir>
+        <maxCacheSize>17gb</maxCacheSize>
+        <fileStoreDir>cache</fileStoreDir>
+    </provider>
+    <provider type="eventual" id="eventual"/>
+    <provider type="retry" id="retry"/>
+    <provider type="google-storage" id="google-storage">
+        <proxyCredential>street</proxyCredential>
+        <bucketName>aBucketName</bucketName>
+        <testConnection>false</testConnection>
+        <proxyIdentity>darkProxy</proxyIdentity>
+        <proxyHost>Box</proxyHost>
+        <httpsPort>3</httpsPort>
+        <path>longestPath</path>
+        <proxyPort>2</proxyPort>
+        <endpoint>google.storage.com</endpoint>
+        <credential>someCred</credential>
+        <port>4</port>
+        <identity>ident</identity>
+        <httpsOnly>false</httpsOnly>
+        <bucketExists>true</bucketExists>
+        <multiPartLimit>1000</multiPartLimit>
+    </provider>
+</config>

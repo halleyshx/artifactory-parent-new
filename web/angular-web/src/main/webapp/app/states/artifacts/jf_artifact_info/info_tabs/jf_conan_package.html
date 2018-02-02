@@ -1,0 +1,35 @@
+<jf-panel jf-panel-heading="Settings"
+          ng-if="jfConanPackage.hasSettings(jfConanPackage.conanPackageData)">
+
+    <table class="jf-data-table">
+        <tr ng-repeat="key in jfConanPackage.knownSettings()">
+            <td ng-if="jfConanPackage.conanPackageData[key]">{{jfConanPackage.DICTIONARY[key]}}:</td>
+            <td ng-if="jfConanPackage.conanPackageData[key]">{{jfConanPackage.conanPackageData[key]}}</td>
+        </tr>
+        <!-- Add all other settings -->
+        <tr ng-repeat="(key,value) in jfConanPackage.conanPackageData.settings">
+            <td>{{jfConanPackage.DICTIONARY[key] || key}}:</td>
+            <td>{{value}}</td>
+        </tr>
+    </table>
+
+</jf-panel>
+
+<jf-panel jf-panel-heading="Options"
+        ng-if="jfConanPackage.isNonEmptyObject(jfConanPackage.conanPackageData.options)">
+    <table class="jf-data-table">
+        <tr ng-repeat="(key,value) in jfConanPackage.conanPackageData.options">
+            <td>{{jfConanPackage.DICTIONARY[key] || key}}:</td>
+            <td>{{value}}</td>
+        </tr>
+    </table>
+</jf-panel>
+
+<jf-panel jf-panel-heading="Requires"
+        ng-if="jfConanPackage.isNonEmptyObject(jfConanPackage.conanPackageData.requires)">
+    <table class="jf-data-table">
+        <tr ng-repeat="value in jfConanPackage.conanPackageData.requires">
+            <td>{{value}}</td>
+        </tr>
+    </table>
+</jf-panel>

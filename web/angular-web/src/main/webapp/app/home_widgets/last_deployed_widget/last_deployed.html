@@ -1,0 +1,25 @@
+<div class="home-page-widget last-deployed" ng-class="{'open-menu' : ctrl.$scope.jfSidebar.pinMenuStatus}">
+    <div class="list-title">
+        <a href ng-click="ctrl.refresh()" class="refresh-button pull-right"><i class="icon icon-refresh"></i></a>
+        Last Deployed Builds
+        <span>({{ctrl.dateTime | date: 'dd/MM/yy HH:mm:ss'}})</span>
+    </div>
+
+    <div class="list-content no-content" ng-if="!ctrl.data.mostRecentBuilds.length">
+        <p>No builds to display.</p>
+        <p>
+            <a href="https://www.jfrog.com/confluence/display/RTF/Build+Integration" target="_blank">Learn how to</a> integrate your build information with Artifactory.
+        </p>
+    </div>
+
+    <div class="list-content" ng-if="ctrl.data.mostRecentBuilds.length">
+        <div class="list-item" ng-if="ctrl.data.mostRecentBuilds.length"
+                ng-repeat="item in ctrl.data.mostRecentBuilds">
+            <a href
+                    ui-sref="builds.info({buildName:item.buildName,buildNumber:item.buildNumber,startTime:item.time,tab:'general'})"
+                    ng-click="ctrl.itemClick()">
+                {{item.buildName}} <span class="build-number">#{{item.buildNumber}}</span>
+            </a>
+        </div>
+    </div>
+</div>

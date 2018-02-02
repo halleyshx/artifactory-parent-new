@@ -1,0 +1,11 @@
+<div class="all-builds-wrapper">
+    <div class="alert alert-static margin-top-25"
+         ng-if="AllBuilds.buildsData && !AllBuilds.buildsData.length"
+         ng-bind-html="AllBuilds.noBuildsDataMessage"></div>
+    <jf-grid grid-options="AllBuilds.allBuildsGridOptions"
+             filter-field="buildName"
+             filter-on-change="true"
+             object-name="build"
+             auto-focus="true">
+    </jf-grid>
+</div>

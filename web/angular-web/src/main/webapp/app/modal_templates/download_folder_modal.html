@@ -1,0 +1,64 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="close" aria-label="Close" ng-click="cancel()"><span
+            aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">Download Folder</h4>
+</div>
+<div class="modal-body blocked-items-wrapper select-target-path">
+    <form name="downloadFolder">
+        <div class="form-group">
+            <table class="jf-data-table">
+                <tr><td>Folder Name:</td><td>{{folderName}}</td></tr>
+                <tr><td>Files Count:</td><td>{{filesCount}} <span ng-if="xrayBlockedPaths && xrayBlockedPaths.length">
+                    (<a href="" ng-click="toggleBlockedList()">{{xrayBlockedPaths.length}} blocked</a> for downloads)
+                    <jf-help-tooltip text="Xray has detected issues on artifacts in this folder, and they have been blocked for download." max-width="250"></jf-help-tooltip>
+                    </span>
+                </td></tr>
+                <tr ng-if="showBlockedFiles" class="showBlockedFiles">
+                    <td colspan="2">
+                        <div class="xrayBlockedFiles dnd-panel">
+                            <h5 class="text-primary">Blocked items</h5>
+                            <div class="col-lg-9 dnd-filter-wrapper">
+                                <input type="text" placeholder="Filter blocked items..." class="input-text dnd-filter" ng-model="term" />
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="dnd-list-wrapper">
+                                    <ul class="dnd-list blocked-items-dnd-list">
+                                        <li ng-repeat="item in xrayBlockedPaths track by $index" ng-show="isHighlighted($index) || !term" class="drag-item" jf-tooltip-on-overflow>
+                                            <span class="drag-item-text" ng-bind-html="item | highlight: term"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr><td>Total Size:</td><td>{{totalSize}} MB</td></tr>
+            </table>
+        </div>
+
+        <div class="form-group margin-top-10">
+            <div class="form-group-cell">
+                <label>Archive Type</label>
+                <jf-ui-select jf-select-model="selection.archiveType" jf-select-options="archiveTypes"></jf-ui-select>
+            </div>
+        </div>
+        <div class="form-group form-checkbox">
+            <div class="form-group-cell">
+                <jf-checkbox text="Include Checksum Files">
+                    <input id="includeChecksumFiles"
+                            type="checkbox"
+                            ng-model="options.includeChecksumFiles"
+                            name="includeChecksumFiles"
+                            jf-tooltip="Include MD5 SHA1 and SHA256 files in the zip">
+                </jf-checkbox>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <div class="modal-footer-buttons-container">
+        <button class="btn btn-primary" ng-click="download()" ng-disabled="xrayBlockedPaths.length == filesCount">Download</button>
+    </div>
+</div>

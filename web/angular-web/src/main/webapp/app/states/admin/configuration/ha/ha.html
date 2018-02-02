@@ -1,0 +1,23 @@
+<div class="content-layout-container">
+    <h1>High Availability Configuration</h1>
+    <div class="content-wrapper">
+        <div class="card stretch card-pole-pad card-side-pad">
+        	<div ng-if="AdminConfigurationHA.ha">
+                <jf-panel jf-panel-heading="Artifactory Nodes" ng-if="AdminConfigurationHA.ha.length > 0">
+                    <!--<div ng-if="AdminConfigurationHA.ha.nodesWithNoLicense > 0"-->
+                         <!--class="alert alert-warning">-->
+                        <!--You have {{AdminConfigurationHA.ha.nodesWithNoLicense}} nodes without license.-->
+                    <!--</div>-->
+
+                    <jf-grid ng-if="AdminConfigurationHA.ha.length"
+                             grid-options="AdminConfigurationHA.gridOptions"
+                             filter-field="id"></jf-grid>
+                </jf-panel>
+	            <div class="alert alert-info"
+                     ng-if="AdminConfigurationHA.ha.length === 0"
+                     ng-bind-html="AdminConfigurationHA.CONFIG_MESSAGES.haNotConfiguredMessage">
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>

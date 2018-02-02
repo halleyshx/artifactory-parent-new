@@ -1,0 +1,12 @@
+<div class="home-page-widget artifacts-count" ng-class="{'open-menu' : ctrl.$scope.jfSidebar.pinMenuStatus}">
+    <div class="row top">
+        <div class="table-cell">
+            <a href class="refresh-count" ng-click="ctrl.updateCount()"><i class="icon icon-refresh"></i></a>
+            <span class="big-num">{{ctrl.homepageData.artifactCount | number}}</span>
+            Number of artifacts
+        </div>
+    </div>
+    <div class="row bottom">
+        <div class="table-cell"></div>
+    </div>
+</div>

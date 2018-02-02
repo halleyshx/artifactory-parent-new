@@ -1,0 +1,17 @@
+<config version="v1">
+    <chain>
+        <provider type="sharding" id="sharding">
+            <sub-provider type="state-aware" id="shard1"/>
+            <sub-provider type="state-aware" id="shard2"/>
+        </provider>
+    </chain>
+    <provider type="sharding" id="sharding"/>
+    <provider type="state-aware" id="shard1">
+        <binariesDir>/filestore1</binariesDir>
+        <fileStoreDir>/filestore1</fileStoreDir>
+    </provider>
+    <provider type="state-aware" id="shard2">
+        <binariesDir>/filestore2</binariesDir>
+        <fileStoreDir>/filestore2</fileStoreDir>
+    </provider>
+</config>

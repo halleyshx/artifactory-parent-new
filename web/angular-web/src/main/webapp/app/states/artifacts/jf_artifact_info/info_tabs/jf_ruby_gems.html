@@ -1,0 +1,34 @@
+<div ng-if="jfRubyGems.gemsRubyData">
+    <jf-panel jf-panel-heading="Package Info"
+              ng-if="jfRubyGems.gemsRubyData.gemsInfo">
+        <table class="jf-data-table">
+            <tr ng-repeat="(key,value) in jfRubyGems.gemsRubyData.gemsInfo" ng-if="key != 'description'">
+                <td ng-if="key == 'homepage'" class="gems-key">Homepage :</td>
+                <td ng-if="key == 'homepage'"><a ng-href="{{value}}" target="_blank" class="gems-value">{{value}}</a></td>
+
+                <td ng-if="key != 'homepage'">{{jfRubyGems.DICTIONARY[key]}} :</td>
+                <td ng-if="key != 'homepage'" class="gems-value">{{value}}
+                    <jf-clip-copy ng-if="key === 'repositoryPath'"
+                                  text-to-copy="jfRubyGems.getRepoPath()"
+                                  object-name="Path"></jf-clip-copy>
+
+                </td>
+            </tr>
+        </table>
+    </jf-panel>
+
+    <jf-panel jf-panel-heading="Description"
+            ng-if="jfRubyGems.gemsRubyData.gemsInfo.description">
+        <p>{{jfRubyGems.gemsRubyData.gemsInfo.description}}</p>
+    </jf-panel>
+
+    <jf-panel jf-panel-heading="Dependencies"
+              ng-if="jfRubyGems.gemsRubyData.gemsDependencies && jfRubyGems.gemsRubyData.gemsDependencies.length">
+
+        <jf-grid grid-options="jfRubyGems.gemsRubyGridOptions"
+                filter-field="name"
+                filter-field2="version"
+                no-pagination="true">
+        </jf-grid>
+    </jf-panel>
+</div>
