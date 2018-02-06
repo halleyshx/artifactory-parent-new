@@ -549,6 +549,7 @@ class ArtifactoryAccessClientConfigStore implements AccessClientConfigStore {
                 }
                 //4- detect running in the same web container
                 if (serverSettings == null) {
+//                    serverUrl = "http://localhost:9080/access";
                     serverUrl = detectBundledAccessServerUrl();
                     log.debug("Detected bundled server URL: {}", serverUrl);
                     serverSettings = new AccessServerSettings(serverUrl, true, "detected");

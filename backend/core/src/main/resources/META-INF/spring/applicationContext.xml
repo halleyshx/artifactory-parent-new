@@ -59,4 +59,28 @@
             <bean class="org.springframework.transaction.interceptor.MatchAlwaysTransactionAttributeSource"/>
         </property>
     </bean>
+
+    <!--<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>-->
+    <!--<bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">-->
+        <!--<property name="hostName" value="10.182.51.216" />-->
+        <!--<property name="password" value="" />-->
+        <!--<property name="port" value="6379" />-->
+        <!--<property name="database" value="0" />-->
+    <!--</bean>-->
+
+    <!--<span style="white-space:pre">    </span>&lt;!&ndash; 自动扫描 &ndash;&gt;-->
+    <context:annotation-config/>
+    <!-- 配置spring-session -->
+    <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
+        <!-- 过期时间100分钟 -->
+        <property name="maxInactiveIntervalInSeconds" value="6000"></property>
+    </bean>
+    <!-- redis连接池 -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig" />
+
+    <bean  id="jedisConnectionFactory"  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"  >
+        <property  name="hostName"  value="10.182.51.216" />
+        <property  name="port"  value="6379" />
+        <property  name="poolConfig"  ref="jedisPoolConfig" />
+    </bean>
 </beans>
