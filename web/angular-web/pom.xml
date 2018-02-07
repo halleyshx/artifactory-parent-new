@@ -42,7 +42,7 @@
                 <configuration>
                     <workingDirectory>src/main/webapp</workingDirectory>
                 </configuration>
-                <!--<executions>-->
+                <executions>
                 <!--<execution>-->
                 <!--<id>install node and npm</id>-->
                 <!--<goals>-->
@@ -66,6 +66,16 @@
                 <!--</configuration>-->
                 <!--</execution>-->
 
+                    <!--<execution>-->
+                        <!--<id>npm install chalk</id>-->
+                        <!--<goals>-->
+                            <!--<goal>npm</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>install chalk</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
                 <!--<execution>-->
                 <!--<id>bower install</id>-->
                 <!--<goals>-->
@@ -76,58 +86,59 @@
                 <!--</configuration>-->
                 <!--</execution>-->
 
-                <!--<execution>-->
-                <!--<id>gulp</id>-->
-                <!--<goals>-->
-                <!--<goal>gulp</goal>-->
-                <!--</goals>-->
-                <!--<configuration>-->
-                <!--<arguments>build</arguments>-->
-                <!--</configuration>-->
-                <!--</execution>-->
+                <execution>
+                <id>gulp</id>
+                <goals>
+                <goal>gulp</goal>
+                </goals>
+                <configuration>
+                <arguments>build</arguments>
+                </configuration>
+                </execution>
+                </executions>
+
+                <!--<executions>-->
+
+                    <!--<execution>-->
+                        <!--<id>install node and yarn</id>-->
+                        <!--<goals>-->
+                            <!--<goal>install-node-and-yarn</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<nodeVersion>v4.4.4</nodeVersion>-->
+                            <!--<yarnVersion>v0.24.6</yarnVersion>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                    <!--<execution>-->
+                        <!--<id>yarn install</id>-->
+                        <!--<goals>-->
+                            <!--<goal>yarn</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>install</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>bower install</id>-->
+                        <!--<goals>-->
+                            <!--<goal>bower</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>install</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                    <!--<execution>-->
+                        <!--<id>gulp</id>-->
+                        <!--<goals>-->
+                            <!--<goal>gulp</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>build</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
                 <!--</executions>-->
-                <!--<executions>
-
-                    <execution>
-                        <id>install node and yarn</id>
-                        <goals>
-                            <goal>install-node-and-yarn</goal>
-                        </goals>
-                        <configuration>
-                            <nodeVersion>v4.4.4</nodeVersion>
-                            <yarnVersion>v0.24.6</yarnVersion>
-                        </configuration>
-                    </execution>
-
-                    <execution>
-                        <id>yarn install</id>
-                        <goals>
-                            <goal>yarn</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>install</arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>bower install</id>
-                        <goals>
-                            <goal>bower</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>install</arguments>
-                        </configuration>
-                    </execution>
-
-                    <execution>
-                        <id>gulp</id>
-                        <goals>
-                            <goal>gulp</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>build</arguments>
-                        </configuration>
-                    </execution>
-                </executions>-->
             </plugin>
         </plugins>
     </build>
